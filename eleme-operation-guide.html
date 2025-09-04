@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饿了么精细化运营手册 - 新运营培训指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <style>
+        :root {
+            --primary-color: #3c64b1;
+            --primary-dark: #2a4a8a;
+            --primary-light: #edf2ff;
+            --secondary-color: #36b37e;
+            --secondary-light: #e6f7f0;
+            --accent-color: #ff9f43;
+            --accent-light: #fff5e6;
+            --eleme-blue: #0066ff;
+            --eleme-orange: #ff6600;
+            --dark-color: #1e293b;
+            --dark-color-alt: #334155;
+            --light-color: #f8fafc;
+            --text-color: #475569;
+            --text-color-light: #94a3b8;
+            --section-bg: #ffffff;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--eleme-blue) 0%, var(--eleme-orange) 100%);
+            color: white;
+            padding: 60px 0 70px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            right: -150px;
+            top: -150px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            left: -100px;
+            bottom: -150px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: 0;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.75rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            margin-bottom: 40px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .section-title {
+            color: var(--eleme-blue);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--eleme-blue), var(--eleme-orange));
+            border-radius: 3px;
+        }
+        
+        .section-title i {
+            font-size: 1.6rem;
+            color: var(--eleme-orange);
+        }
+        
+        .goal-box {
+            background-color: var(--secondary-light);
+            border-left: 4px solid var(--secondary-color);
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            position: relative;
+        }
+        
+        .goal-box::before {
+            content: "";
+            position: absolute;
+            top: 25px;
+            left: -12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            box-shadow: 0 0 0 5px var(--secondary-light);
+        }
+        
+        .measures-box {
+            background-color: var(--accent-light);
+            border-left: 4px solid var(--accent-color);
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            position: relative;
+        }
+        
+        .measures-box::before {
+            content: "";
+            position: absolute;
+            top: 25px;
+            left: -12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            box-shadow: 0 0 0 5px var(--accent-light);
+        }
+        
+        .goal-title, .measures-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            list-style-type: none;
+        }
+        
+        ul li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.7;
+        }
+        
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--eleme-blue);
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            counter-reset: item;
+            list-style-type: none;
+        }
+        
+        ol li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.7;
+            counter-increment: item;
+        }
+        
+        ol li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            color: var(--eleme-orange);
+            font-weight: 600;
+        }
+        
+        .nav {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+        }
+        
+        .nav-brand {
+            color: var(--eleme-blue);
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-brand:hover {
+            color: var(--eleme-blue);
+            text-decoration: none;
+        }
+        
+        .nav-brand i {
+            font-size: 1.4rem;
+            color: var(--eleme-orange);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+        }
+        
+        .nav-links li {
+            margin: 0;
+        }
+        
+        .nav-links a {
+            color: var(--dark-color-alt);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            padding: 25px 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--eleme-blue);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 20px;
+            left: 0;
+            background: linear-gradient(to right, var(--eleme-blue), var(--eleme-orange));
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark-color-alt);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--eleme-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 100;
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background-color: var(--eleme-orange);
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 60px;
+            background-color: var(--dark-color);
+            color: white;
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--eleme-blue), var(--eleme-orange));
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-logo i {
+            font-size: 1.8rem;
+            color: var(--eleme-orange);
+        }
+        
+        @media (max-width: 991px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .section {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header {
+                padding: 50px 0 60px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .section {
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .goal-box, .measures-box {
+                padding: 20px 25px;
+            }
+
+            .nav-brand div {
+                display: none !important;
+            }
+
+            .nav-brand::after {
+                content: "呈尚策划";
+                font-size: 0.8rem;
+                color: var(--eleme-orange);
+                margin-left: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="position: relative;">
+            <!-- 返回首页按钮 -->
+            <div style="position: absolute; top: 20px; left: 20px; z-index: 100;">
+                <a href="index.html" style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    background: rgba(255, 255, 255, 0.2);
+                    color: rgba(255, 255, 255, 0.9);
+                    text-decoration: none;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                    font-weight: 500;
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.background='rgba(255, 255, 255, 0.25)'; this.style.transform='translateY(-1px)'"
+                   onmouseout="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(0)'">
+                    <i class="ri-arrow-left-line" style="font-size: 1rem;"></i>
+                    <span>返回首页</span>
+                </a>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px; gap: 15px; margin-top: 40px;">
+                <div style="background: rgba(255, 255, 255, 0.15); padding: 8px 20px; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <span style="font-size: 0.9rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);">呈尚策划</span>
+                    <span style="font-size: 0.8rem; margin: 0 8px; color: rgba(255, 255, 255, 0.7);">|</span>
+                    <span style="font-size: 0.9rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);">运营部</span>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.15); padding: 8px 20px; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <span style="font-size: 0.8rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);">总共</span>
+                    <span style="font-size: 1.1rem; font-weight: 700; color: #fff; margin: 0 4px;">17</span>
+                    <span style="font-size: 0.8rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);">个流程</span>
+                </div>
+            </div>
+            <h1>饿了么精细化运营手册</h1>
+            <p class="subtitle">适用于新运营培训 - 从店铺搭建到精细化运营的全过程指南</p>
+        </div>
+    </header>
+    
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <i class="ri-restaurant-line"></i>
+                <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                    <span style="font-size: 1.3rem; font-weight: 700;">饿了么运营指南</span>
+                    <span style="font-size: 0.7rem; color: var(--eleme-orange); font-weight: 500; margin-top: -2px;">呈尚策划·运营部</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#section1">市场调研</a></li>
+                <li><a href="#section2">视觉设计</a></li>
+                <li><a href="#section3">菜单优化</a></li>
+                <li><a href="#section4">关键词优化</a></li>
+                <li><a href="#section5">菜品描述</a></li>
+                <li><a href="#section11">评价管理</a></li>
+                <li><a href="#section13">精准营销</a></li>
+                <li><a href="#section15">数据分析</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="ri-menu-line"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container" id="content">
+        <!-- 第一部分：市场调研与策略规划 -->
+        <section class="section" id="section1">
+            <h2 class="section-title"><i class="ri-search-line"></i>1. 市场调研与策略规划</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                明确店铺定位、分析核心数据、规划营销活动，为后续所有运营工作制定总纲领。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>市场调研</strong>：收集并分析商圈内TOP竞争对手的店铺信息（如菜品、价格、月销、活动、评分），并调研目标客群的核心需求与偏好。</li>
+                    <li><strong>品牌定位</strong>：基于市场调研，明确品牌的目标人群、核心卖点和整体风格，形成差异化优势。</li>
+                    <li><strong>店铺数据分析（初步）</strong>：全面盘点店铺现有核心数据（若为老店），如曝光、入店、下单、客单价、评分等，找出核心优势与短板。</li>
+                    <li><strong>活动设计（初步）</strong>：基于调研和数据分析，初步规划店铺的活动架构（如满减梯度、折扣品、优惠券组合等），作为后续活动执行的基础。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第二部分：店铺视觉系统设计 -->
+        <section class="section" id="section2">
+            <h2 class="section-title"><i class="ri-palette-line"></i>2. 店铺视觉系统设计</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                打造专业、统一、有吸引力的店铺视觉形象，提升顾客的第一印象和信任感。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>Logo设计</strong>：设计简洁、易记、有辨识度的品牌Logo。</li>
+                    <li><strong>店招设计</strong>：设计醒目、能突出品牌和核心品类的店铺招牌。</li>
+                    <li><strong>海报设计</strong>：制作风格统一的促销活动海报，清晰传达优惠信息。</li>
+                    <li><strong>全店图设计</strong>：系统规划店铺内所有视觉元素（如轮播图、分类图、菜品图），确保色彩、风格、构图的统一性，打造品牌专业感。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第三部分：菜单结构优化 -->
+        <section class="section" id="section3">
+            <h2 class="section-title"><i class="ri-menu-line"></i>3. 菜单结构优化（分类与排序）</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                优化菜单的分类逻辑和菜品展示顺序，方便顾客快速找到心仪菜品，提升浏览效率。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>导航栏分类</strong>：将热销、主推、高毛利品类前置，并使用"招牌必点"、"主食套餐"等清晰名称命名。</li>
+                    <li><strong>菜品排序</strong>：在各分类下，综合考虑销量、利润、库存等因素，优化菜品的展示顺序。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第四部分：套餐搭配设计 -->
+        <section class="section" id="section4">
+            <h2 class="section-title"><i class="ri-shopping-bag-line"></i>4. 套餐搭配设计</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                设计多样化的组合套餐，满足不同消费场景需求，有效提升客单价。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>组合设计</strong>：设计"主食+饮品"、"小吃+饮品"等多种组合套餐。</li>
+                    <li><strong>定价策略</strong>：套餐价格应有吸引力，明确体现出比单点更优惠，引导顾客消费升级。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第五部分：店铺特色功能设置 -->
+        <section class="section" id="section5">
+            <h2 class="section-title"><i class="ri-settings-3-line"></i>5. 店铺特色功能设置（提升转化率）</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                配置饿了么平台特色功能，通过多样化的商品呈现方式，突出重点、建立信任，从而有效提升下单转化率。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>店内橱窗</strong>：设置3个橱窗位，在店铺最显眼的位置展示爆款、新品或高利润产品，实现重点引流。</li>
+                    <li><strong>老板推荐</strong>：创建"老板推荐"分组，放入招牌或高利润菜品，利用权威性引导下单。</li>
+                    <li><strong>热销分组</strong>：自动或手动创建"热销TOP10"等分组，利用从众心理提升转化。</li>
+                    <li><strong>优惠分组</strong>：集中展示所有折扣、特价商品，方便对价格敏感的用户快速查找。</li>
+                    <li><strong>商家相册</strong>：上传展示店铺环境、厨房卫生、打包流程等真实图片，全方位展示店铺实力，建立顾客信任。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第六部分：标题关键词优化 -->
+        <section class="section" id="section6">
+            <h2 class="section-title"><i class="ri-hashtag"></i>6. 标题关键词优化（提升搜索排名）</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                提升店铺在平台的自然搜索排名，获取更多免费、精准的曝光。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>关键词挖掘</strong>：挖掘行业热搜词、季节词、场景词（如"减脂"、"一人食"）。</li>
+                    <li><strong>标题公式应用</strong>：采用 `品牌名 + 核心品类/食材 + 特色/口味` 的结构 (例如: 张姐厨房-土豆牛肉盖饭-家常味)。</li>
+                    <li><strong>效果追踪</strong>：定期分析关键词带来的曝光和转化数据，淘汰低效词。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第七部分：菜品描述撰写 -->
+        <section class="section" id="section7">
+            <h2 class="section-title"><i class="ri-file-text-line"></i>7. 菜品描述撰写（激发购买欲望）</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                通过生动的文字内容激发顾客食欲，强化菜品卖点，提升点击率和下单转化率。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>感官描写</strong>：使用"酥脆"、"爆汁"、"香气扑鼻"等词汇激发食欲。</li>
+                    <li><strong>卖点突出</strong>：清晰说明菜品的独特原料、制作工艺或口味亮点。</li>
+                    <li><strong>信息完整</strong>：标注菜品规格（克重/份量）、主要原料，减少顾客疑虑。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第八部分：高清菜品图优化 -->
+        <section class="section" id="section8">
+            <h2 class="section-title"><i class="ri-image-line"></i>8. 高清菜品图优化</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                优化菜品的静态视觉呈现，通过有食欲感的高清图片，提升点击率。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>拍摄与设计</strong>：拍摄或设计风格统一、光线明亮、构图饱满的菜品图片，确保主图清晰突出，这是所有视觉的基础。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第九部分：视频店招设置 -->
+        <section class="section" id="section9">
+            <h2 class="section-title"><i class="ri-video-line"></i>9. 视频店招设置</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                利用动态视觉吸引顾客眼球，在店铺头部黄金位置，高效传达品牌活力与主推产品。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>制作与上传</strong>：制作5-10秒的循环短视频作为店招，内容可展示招牌菜的制作过程或诱人特写，并上传至店铺后台。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第十部分：店铺活动设计 -->
+        <section class="section" id="section10">
+            <h2 class="section-title"><i class="ri-gift-line"></i>10. 店铺活动设计</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                通过多样化的营销活动，刺激下单，提升客单价，并吸引新用户。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>满减活动</strong>：设置合理的阶梯式满减，门槛应略高于平均客单价，引导顾客凑单。</li>
+                    <li><strong>折扣商品</strong>：设置1-2款引流折扣商品，吸引用户进店。</li>
+                    <li><strong>优惠券</strong>：设计不同类型的优惠券（如店铺券、商品券、新客券），用于精准营销。</li>
+                    <li><strong>首单福利</strong>：针对新用户设置有吸引力的首单0元购或大额折扣，降低新客尝试门槛。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第十一部分：顾客评价管理 -->
+        <section class="section" id="section11">
+            <h2 class="section-title"><i class="ri-chat-3-line"></i>11. 顾客评价管理（回复与申诉）</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                高效处理顾客评价，通过真诚沟通维护客户关系，并对不实评价进行申诉，目标评价回复率达到95%以上。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>评价回复</strong>：及时响应并真诚沟通，对差评中提到的问题，需提出具体解决方案。</li>
+                    <li><strong>差评申诉</strong>：对于不实、恶意的差评，及时收集证据（如聊天记录、订单截图）向平台提起申诉。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第十二部分：店铺分解析与优化 -->
+        <section class="section" id="section12">
+            <h2 class="section-title"><i class="ri-pie-chart-line"></i>12. 店铺分解析与优化</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                定期分析店铺分构成（商品、服务、配送），精准定位失分项，通过针对性优化提升店铺综合得分。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>数据追踪</strong>：每周追踪店铺分变化，重点关注低于行业均值的项目。</li>
+                    <li><strong>归因分析</strong>：结合顾客评价和后台数据，分析失分背后的具体原因（如出餐慢、包装洒漏、菜品描述不符等）。</li>
+                    <li><strong>优化执行</strong>：制定并执行具体改进措施，如优化出餐流程、更换包装材料、调整菜品描述等。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第十三部分：精准营销 -->
+        <section class="section" id="section13">
+            <h2 class="section-title"><i class="ri-target-line"></i>13. 精准营销（老客激活与留存）</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                激活不同生命周期的顾客，通过差异化福利提升复购率和用户粘性。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>精准营销发券</strong>：
+                        <ul>
+                            <li><strong>客群划分</strong>：将顾客分为新客、活跃客、沉睡客等。</li>
+                            <li><strong>差异化发券</strong>：针对不同客群发放不同力度和门槛的优惠券，实现精准激活。</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第十四部分：付费推广 -->
+        <section class="section" id="section14">
+            <h2 class="section-title"><i class="ri-advertisement-line"></i>14. 付费推广（新客获取与曝光）</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                最大化付费推广的投入产出比（ROI），精准获取新客，提升店铺曝光度。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>付费推广调试</strong>：
+                        <ul>
+                            <li><strong>数据分析</strong>：基于历史数据，找出订单高峰时段和高转化区域。</li>
+                            <li><strong>预算分配</strong>：在高峰期加大投入，在平淡期控制预算，实现效率最大化。</li>
+                            <li><strong>A/B测试</strong>：对不同推广方案（如出价、定向人群）进行小范围测试，择优投放。</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第十五部分：数据周报与复盘 -->
+        <section class="section" id="section15">
+            <h2 class="section-title"><i class="ri-bar-chart-line"></i>15. 数据周报与复盘</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                培养数据驱动的决策习惯，通过数据发现问题、定位原因、指导优化。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>核心指标追踪</strong>：每日/每周监控核心数据，包括：曝光量、入店率、下单转化率、客单价、营业额。</li>
+                    <li><strong>多维度分析</strong>：从时段、品类、活动等多个角度剖析店铺表现，找到增长点和流失点。</li>
+                    <li><strong>行动指南</strong>：每份周报需附带3-5条具体、可执行的优化建议，并追踪执行效果。</li>
+                    <li><strong>目标管理</strong>：核心目标是将下单转化率稳定提升并维持在25%-30%的健康区间。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第十六部分：内容营销与私域沟通 -->
+        <section class="section" id="section16">
+            <h2 class="section-title"><i class="ri-message-line"></i>16. 内容营销与私域沟通</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                与顾客建立情感连接，塑造品牌文化，提升品牌忠诚度和用户黏性。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>私域沟通</strong>：建立粉丝群或通过店铺公告，使用"每日群发话术"分享平台政策、新品信息、健康知识等，增强用户黏性。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 第十七部分：新品研发与上线 -->
+        <section class="section" id="section17">
+            <h2 class="section-title"><i class="ri-add-circle-line"></i>17. 新品研发与上线</h2>
+
+            <div class="goal-box">
+                <span class="goal-title">目标</span>
+                丰富菜单结构，响应市场和季节变化，持续为顾客带来新鲜感，刺激复购。
+            </div>
+
+            <div class="measures-box">
+                <span class="measures-title">措施</span>
+                <ol>
+                    <li><strong>市场调研</strong>：关注平台热销品类和竞品动态，确定新品方向。</li>
+                    <li><strong>上线策略</strong>：将新品放置在菜单醒目位置，并配合新品体验价、套餐组合等促销活动，引导顾客尝试。</li>
+                    <li><strong>数据追踪</strong>：密切监控新品上线后的销量和评价，及时优化调整。</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="ri-restaurant-line"></i>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                        <span>饿了么精细化运营手册</span>
+                        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--eleme-orange);">
+                            <i class="ri-building-line" style="font-size: 1rem;"></i>
+                            <span>呈尚策划 运营部</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="color: rgba(255, 255, 255, 0.7); margin: 15px 0; font-size: 0.9rem;">
+                    &copy; 2025 呈尚策划运营部 - 专业提升店铺运营效率与销售转化
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem;">
+                    适用于新运营培训 | 从店铺搭建到精细化运营的全过程指南
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top" id="scrollTop">
+        <i class="ri-arrow-up-line"></i>
+    </div>
+
+    <script>
+        // 滚动到顶部按钮
+        const scrollTop = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollTop.classList.add('active');
+            } else {
+                scrollTop.classList.remove('active');
+            }
+        });
+
+        scrollTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 移动端菜单
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 添加移动端导航样式
+        const style = document.createElement('style');
+        style.textContent = `
+            @media (max-width: 991px) {
+                .nav-links.active {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 70px;
+                    left: 0;
+                    width: 100%;
+                    background-color: white;
+                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    gap: 15px;
+                    z-index: 100;
+                    border-top: 1px solid #e2e8f0;
+                }
+
+                .nav-links.active li {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .nav-links.active a {
+                    padding: 10px 0;
+                    display: block;
+                    width: 100%;
+                }
+
+                .nav-links.active a::after {
+                    display: none;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

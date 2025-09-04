@@ -443,7 +443,35 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-        
+
+        .eleme-guide-btn {
+            background: linear-gradient(135deg, #0066ff 0%, #ff6600 100%) !important;
+            color: white !important;
+            border-radius: 25px !important;
+            padding: 8px 16px !important;
+            margin-right: 15px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .eleme-guide-btn:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4) !important;
+            color: white !important;
+        }
+
+        .eleme-guide-btn::after {
+            display: none !important;
+        }
+
+        .eleme-guide-btn i {
+            font-size: 1rem;
+        }
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -561,6 +589,28 @@
         <div class="container">
             <h1>呈尚策划-外卖店铺完整运营流程</h1>
             <p class="subtitle">提升店铺运营效率与销售转化的全方位策略</p>
+            <div style="margin-top: 45px; text-align: center;">
+                <a href="eleme-operation-guide.html" style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    background: linear-gradient(135deg, #0066ff 0%, #ff6600 100%);
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 20px;
+                    border-radius: 25px;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.25);
+                    transition: all 0.3s ease;
+                    backdrop-filter: blur(10px);
+                " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0, 102, 255, 0.35)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 102, 255, 0.25)'">
+                    <i class="ri-restaurant-line" style="font-size: 1rem;"></i>
+                    <span>饿了么精细化运营手册</span>
+                    <i class="ri-arrow-right-line" style="font-size: 0.9rem;"></i>
+                </a>
+            </div>
         </div>
     </header>
     
