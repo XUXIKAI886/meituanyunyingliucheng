@@ -123,6 +123,39 @@
 - 支持PC端与移动端自适应浏览
 - 部分功能（如全屏模式）需要现代浏览器支持
 
+## 维护与构建（重要）
+
+为提升可维护性，本项目将两份页面源码拆分到 `src/pages/*` 下维护，再一键生成回根目录的单文件 HTML（便于 GitHub Pages 部署与离线双击打开）。
+
+### 目录说明
+
+- 美团页面源码：`src/pages/meituan/`
+- 饿了么页面源码：`src/pages/eleme/`
+- 构建脚本：`scripts/build_pages.py`
+
+### 推荐编辑方式
+
+- 改样式：编辑对应页面的 `style.css`
+- 改交互：编辑对应页面的 `script.js`
+- 改模块内容：编辑 `sections/sectionXX.html`（每个模块一个文件）
+- 改整体结构：编辑 `template.html`
+
+### 一键生成
+
+```bash
+python scripts/build_pages.py
+```
+
+生成产物（用于部署/打开）：
+- `index.html`
+- `eleme-operation-guide.html`
+
+### 一致性校验（可选）
+
+```bash
+python scripts/build_pages.py --check
+```
+
 ## 内容格式规范
 
 **重要提示：页面内容已经过精简优化处理，请勿随意修改格式！**

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饿了么精细化运营手册 - 新运营培训指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <style>
+        /* @include style.css */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="position: relative;">
+            <!-- 返回首页按钮 -->
+            <div style="position: absolute; top: 20px; left: 20px; z-index: 100;">
+                <a href="index.html" style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    background: rgba(255, 255, 255, 0.2);
+                    color: rgba(255, 255, 255, 0.9);
+                    text-decoration: none;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                    font-weight: 500;
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.background='rgba(255, 255, 255, 0.25)'; this.style.transform='translateY(-1px)'"
+                   onmouseout="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(0)'">
+                    <i class="ri-arrow-left-line" style="font-size: 1rem;"></i>
+                    <span>返回首页</span>
+                </a>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px; gap: 15px; margin-top: 40px;">
+                <div style="background: rgba(255, 255, 255, 0.15); padding: 8px 20px; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <span style="font-size: 0.9rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);">呈尚策划</span>
+                    <span style="font-size: 0.8rem; margin: 0 8px; color: rgba(255, 255, 255, 0.7);">|</span>
+                    <span style="font-size: 0.9rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);">运营部</span>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.15); padding: 8px 20px; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <span style="font-size: 0.8rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);">总共</span>
+                    <span style="font-size: 1.1rem; font-weight: 700; color: #fff; margin: 0 4px;">17</span>
+                    <span style="font-size: 0.8rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);">个流程</span>
+                </div>
+            </div>
+            <h1>饿了么精细化运营手册</h1>
+            <p class="subtitle">适用于新运营培训 - 从店铺搭建到精细化运营的全过程指南</p>
+        </div>
+    </header>
+    
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <i class="ri-restaurant-line"></i>
+                饿了么运营指南
+            </a>
+            <ul class="nav-links">
+                <li><a href="#section1">四件套</a></li>
+                <li><a href="#section2">图片下载</a></li>
+                <li><a href="#section3">三件套</a></li>
+                <li><a href="#section4">导航栏</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        全店图
+                        <i class="ri-arrow-down-s-line"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section5"><span class="badge badge-orange">第3天</span> 10张图</a></li>
+                        <li><a href="#section6"><span class="badge badge-blue">第4天</span> 11-20张</a></li>
+                        <li><a href="#section7"><span class="badge badge-purple">第5天</span> 21-30张</a></li>
+                        <li><a href="#section8"><span class="badge badge-cyan">第6天</span> 31-40张</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section9">关键词</a></li>
+                <li><a href="#section10">菜品描述</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        运营管理
+                        <i class="ri-arrow-down-s-line"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section11">店铺功能</a></li>
+                        <li><a href="#section12">评价管理</a></li>
+                        <li><a href="#section13">精准营销</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        数据分析
+                        <i class="ri-arrow-down-s-line"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section14">数据周报</a></li>
+                        <li><a href="#section15">付费推广</a></li>
+                        <li><a href="#section17">巡店系统</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section16">新品套餐</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="ri-menu-line"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container" id="content">
+        <!-- @include_glob sections/section*.html -->
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="ri-restaurant-line"></i>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                        <span>饿了么精细化运营手册</span>
+                        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--eleme-orange);">
+                            <i class="ri-building-line" style="font-size: 1rem;"></i>
+                            <span>呈尚策划 运营部</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="color: rgba(255, 255, 255, 0.7); margin: 15px 0; font-size: 0.9rem;">
+                    &copy; 2025 呈尚策划运营部 - 专业提升店铺运营效率与销售转化
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem;">
+                    适用于新运营培训 | 从店铺搭建到精细化运营的全过程指南
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top" id="scrollTop">
+        <i class="ri-arrow-up-line"></i>
+    </div>
+
+    <script>
+        /* @include script.js */
+    </script>
+</body>
+</html>
